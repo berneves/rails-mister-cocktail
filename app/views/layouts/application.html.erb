@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>RailsMisterCocktail</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +12,17 @@
   </head>
 
   <body>
+    <div class = navbar-lewagon>
+    </div>
     <%= yield %>
+     <div class="footer">
+      <div class="footer-links">
+        <a href="https://www.facebook.com/bernardo.neves.758"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://github.com/berneves"><i class="fab fa-fw fa-github"></i></a>
+        <a href="https://www.instagram.com/bernardosbneves/"><i class="fab fa-fw fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/bernardo-neves0/"><i class="fab fa-fw fa-linkedin"></i></a>
+        <p class="text-center">This site was coded by Bernardo at Le Wagon </p>
+      </div>
+    </div>
   </body>
 </html>

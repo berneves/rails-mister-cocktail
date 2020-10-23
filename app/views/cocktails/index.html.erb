@@ -1,0 +1,30 @@
+
+
+  <div class="banner my-4">
+    <div class = "container">
+      <h1 class="font-weight-bold text-center">Best Cocktails</h1>
+      <div class="col text-center">
+        <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-outline-success my-4 align-center", type: "submit" %>
+
+      </div>
+    </div>
+  </div>
+    <div class = "container">
+      <div class="row">
+        <% @cocktails.each do |cocktail| %>
+            <div class="col-4">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><%=cocktail.name %></h5>
+                  <%= link_to "Check more", cocktail_path(cocktail), class: "btn btn-primary" %>
+                  <%= link_to 'Remove', cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?"}, class: 'ml-3 text-danger' %>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+  </div>
+
+
+

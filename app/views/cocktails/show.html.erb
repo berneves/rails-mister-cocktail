@@ -1,0 +1,23 @@
+<h1>This is this cocktail and a place for you to add a dose</h1>
+
+<h2><%=@cocktail.name %></h2>
+  <% @cocktail.doses.each do |dose|%>
+    <h3> That's a description for a good dose: <strong> <%= dose.description %></strong>
+
+      <%= link_to(content_tag(:i, nil, class: "fas fa-trash-alt"), dose_path(id: dose.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'ml-3 text-danger') %>
+    <h3> That's the ingredient: <em><%= dose.ingredient.name %> </em></h3>
+  <% end %>
+
+<div class="container">
+  <div class="row justify-content-center">
+      <h1>Add new dose for <%= @cocktail.name %></h1>
+
+      <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient %>
+        <%= f.submit "Add dose", class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
